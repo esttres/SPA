@@ -1,0 +1,50 @@
+<div class="container">
+  <div>
+    <% @posts.each_slice(4) do |slice|%>
+      <div class="row"
+        <% slice.each do |image|%>
+          <div class="col-xs-3">
+            <%= image_tag(image.url, class: "img-responsive") %>
+          </div>
+        <%end%>
+      </div>
+  <%end%>
+</div>
+
+
+<div class="row">
+
+    <%- model_class = Post -%>
+    <div class="page-header">
+      <h1 class="text-center">Posts</h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= model_class.human_attribute_name(:url) %></th>
+          <th><%=t '.actions', :default => t("helpers.actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= image_tag(post.url) %></td>
+            <td>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_post_path(post), :class => 'btn btn-default btn-xs' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          post_path(post),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-xs btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_post_path,
+                :class => 'btn btn-primary' %>
+</div>
+</div>
