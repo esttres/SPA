@@ -15,6 +15,8 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    format.html { redirect_to @post, notice: 'Post was successfully created.' }
+    format.json { render :show, status: :created, location: @post }
   end
 
   # GET /posts/1/edit
