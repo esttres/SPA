@@ -42,6 +42,11 @@ gem 'faker'
 
 gem 'rails_12factor', group: :production
 
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+
+gem "remotipart"
+
 
 group :development, :test do
 

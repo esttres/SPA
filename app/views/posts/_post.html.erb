@@ -1,0 +1,8 @@
+<%= image_tag(image.url, class: "img-responsive") %>
+<%= link_to 'edit', edit_post_path(image),
+            :class => 'btn btn-default btn-xs' %>
+
+<%= link_to 'destroy', post_path(image),
+            :method => :delete,
+            :data => { :confirm => 'Are you sure?'},
+            :class => 'btn btn-xs btn-danger' %>

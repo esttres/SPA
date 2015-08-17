@@ -1,9 +1,10 @@
-<%= form_for @post, :html => { :class => "form-horizontal post" } do |f| %>
+<%= form_for @post, :html => { :class => "form-horizontal post" }, remote: :true do |f| %>
 
     <% if @post.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@post.errors.count, "error") %>
+          prohibited this post from being saved:</h3>
       </div>
       <div class="panel-body">
         <ul>

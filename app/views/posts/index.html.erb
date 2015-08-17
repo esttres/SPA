@@ -4,38 +4,9 @@
     <div class="row">
       <% slice.each do |image|%>
         <div class="col-xs-3">
-          <%= image_tag(image.url, class: "img-responsive") %>
-          <%= link_to 'edit', edit_post_path(image),
-                      :class => 'btn btn-default btn-xs' %>
-                      
-          <%= link_to 'destroy', post_path(image),
-                      :method => :delete,
-                      :data => { :confirm => 'Are you sure?'},
-                      :class => 'btn btn-xs btn-danger' %>
+          <%= render :partial => 'post', :locals => {:image => image} %>
         </div>
       <%end%>
     </div>
   <%end%>
-</div>
-
-
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
 </div>
