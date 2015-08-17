@@ -1,12 +1,19 @@
-<h1 class="text-center">Posts</h1>
-<div>
-  <% @posts.each_slice(4) do |slice|%>
-    <div class="row">
-      <% slice.each do |image|%>
-        <div class="col-xs-3">
-          <%= render :partial => 'post', :locals => {:image => image} %>
-        </div>
-      <%end%>
-    </div>
-  <%end%>
+<div class="container" id="posts_list">
+
+  <h1 class="text-center">Posts</h1>
+  <div>
+    <% @posts.each_slice(4) do |slice|%>
+      <div class="row">
+        <% slice.each do |image|%>
+          <div class="col-xs-3">
+            <%= render :partial => 'post', :locals => {:image => image} %>
+          </div>
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+
+  <%= render :partial => 'posts/form.html.erb', :layout => 'posts/shared/modal', :locals => {:title => 'New Post', :id => 'newPost'} %>
+
+
 </div>
