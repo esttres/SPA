@@ -40,6 +40,7 @@ gem 'devise'
 # Need faker to make .gif
 gem 'faker'
 
+gem 'rails_12factor', group: :production
 
 
 group :development, :test do
