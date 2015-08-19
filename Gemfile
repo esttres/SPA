@@ -47,6 +47,8 @@ gem "refile-mini_magick"
 
 gem "remotipart"
 
+gem 'bootstrap-sass'
+
 
 group :development, :test do
 

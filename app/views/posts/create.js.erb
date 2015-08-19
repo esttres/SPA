@@ -1,10 +1,4 @@
-if($("#ajax-flashes p").length > 0){
-  $("#ajax-flashes").fadeOut();
-}
-$("#ajax-flashes p").remove();
-$("#newPost").modal('hide');
+$('#newPost').modal('hide');
 $("#posts_list").prepend("<%= escape_javascript(render :partial => "post", :locals => {:post => @post}) %>");
+
 resetForm($('#new_post'));
-$("#ajax-flashes").addClass("alert-success");
-$("#ajax-flashes").append("<p>Wooooooooo! New Post! _Yes_!</p>");
-$("#ajax-flashes").fadeIn();

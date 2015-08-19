@@ -13,7 +13,9 @@
     <%end%>
   </div>
 
-  <%= render :partial => 'posts/form.html.erb', :layout => 'posts/shared/modal', :locals => {:title => 'New Post', :id => 'newPost'} %>
+  <%= render :partial => 'posts/new.html.erb'%>
+
+  <%= render :partial => 'posts/form.html.erb' %>
 
 
 </div>
