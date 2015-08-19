@@ -1,4 +1,4 @@
 $('#newPost').modal('hide');
-$("#posts_list").prepend("<%= escape_javascript(render :partial => "post", :locals => {:post => @post}) %>");
+$("#posts_list").prepend("<%= escape_javascript(render :partial => "post", :locals => {:image => @post}) %>");
 
-resetForm($('#new_post'));
+resetForm($('#new_post_form'));
