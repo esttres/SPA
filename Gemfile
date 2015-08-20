@@ -49,6 +49,11 @@ gem "remotipart"
 
 gem 'bootstrap-sass'
 
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+
+gem 'refile-postgres'
+
 
 group :development, :test do
 

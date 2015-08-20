@@ -21,6 +21,9 @@
     <div class="controls">
       <%= f.text_field :url, :class => 'form-control' %>
     </div>
+    <div>
+      <%= f.attachment_field :file %>
+    </div>
     <%= error_span(@post[:url]) %>
   </div>
 

@@ -1,4 +1,9 @@
-<%= image_tag(image.url, class: "img-responsive") %>
+<% if image.file.blank?%>
+  <%= image_tag(image.url, class: "img-responsive") %>
+<% else %>
+  <% image_tag(attachment_url(image, :file)) %>
+<% end %>
+
 <%= link_to 'edit', edit_post_path(image),
             :class => 'btn btn-default btn-xs' %>
 
